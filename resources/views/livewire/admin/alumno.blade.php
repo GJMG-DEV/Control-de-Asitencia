@@ -27,11 +27,11 @@
                         <td>{{$item->nombre}}</td>
                         <td>{{$item->apePaterno}}</td>
                         <td>{{$item->apeMaterno}}</td>
-                        <td>{{$item->sesiones_id}}</td>
+                        <td>{{$item->sesion->nombre}}</td>
                          <td>
                                 <div class="btn-group" role="group" aria-label="Acciones">
                                     <button type="button" class="btn btn-sm btn-primary"
-                                        wire:click="editarSesion({{ $item->id }})">
+                                        wire:click="editarAlumno({{ $item->id }})">
                                         <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -117,7 +117,7 @@
                 confirmButtonText: "Si, eliminar"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    $wire.dispatch('eliminarSesion',{id:id});
+                    $wire.dispatch('eliminarAlumno',{id:id});
                     
                 }
             });

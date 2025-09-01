@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('asistencias', function (Blueprint $table) {
             $table->id();
-             $table->date('fecha');
+            $table->date('fecha');
+            $table->boolean('asistencia');
             $table->foreignId('alumnos_id')->constrained('alumnos')->onDelete('cascade');
             $table->timestamps();
         });
